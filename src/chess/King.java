@@ -1,7 +1,6 @@
-package model.entities;
+package chess;
 
-import boardgame.Position;
-import model.entities.enums.Color;
+import boardgame.Board;
 
 public class King extends ChessPiece{
 
@@ -9,8 +8,8 @@ public class King extends ChessPiece{
 		
 	}
 	
-	public King(Position position, Color color, Integer moveCount) {
-		super(position, color, moveCount);
+	public King(Board board, Color color, Integer moveCount) {
+		super(board, color, moveCount);
 	}
 
 	@Override

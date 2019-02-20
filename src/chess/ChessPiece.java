@@ -1,20 +1,20 @@
-package model.entities;
+package chess;
 
+import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
-import model.entities.enums.Color;
 
 public abstract class ChessPiece extends Piece {
 
 	private Color color;
-	private Integer moveCount;
+	private int moveCount;
 	
 	public ChessPiece() {
 		
 	}
 
-	public ChessPiece(Position position, Color color, Integer moveCount) {
-		super(position);
+	public ChessPiece(Board board, Color color, int moveCount) {
+		super(board);
 		this.color = color;
 		this.moveCount = moveCount;
 	}
@@ -23,16 +23,12 @@ public abstract class ChessPiece extends Piece {
 		return color;
 	}
 
-	public void setColor(Color color) {
-		this.color = color;
-	}
-
-	public Integer getMoveCount() {
+	public int getMoveCount() {
 		return moveCount;
 	}
 	
 	public ChessPosition getChessPosition() {
-		return new ChessPosition();
+		return ChessPosition.fromPosition(position);
 	}
 	
 	protected boolean isThereOpponentPiece(Position position) {

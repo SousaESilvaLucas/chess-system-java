@@ -2,7 +2,7 @@ package application;
 
 import boardgame.Board;
 import boardgame.Position;
-import model.entities.King;
+import chess.King;
 
 public class Program {
 
@@ -31,6 +31,11 @@ public class Program {
 		
 		
 		System.out.println(chessBoard.positionExists(new Position (9,0)));
+		
+		King k = (King) chessBoard.piece(BoardPositions[3][3]);
+
+		System.out.println(k.getChessPosition());
+		System.out.println(k.getPosition());
 
 	}
 
